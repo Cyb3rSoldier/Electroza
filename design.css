@@ -1,63 +1,196 @@
 body {
-    background-color: #F3F0E6;
+    background: linear-gradient(to right, #fdfcfb, #e2d1c3); /* soft gradient */
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Reset & Global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border: border-box;
 }
 
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 1%;
+    padding: 1% 5%;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    z-index: 1;
-    background-color: #829A78 ;
+    align-items: center;
+    z-index: 10;
+    background: linear-gradient(90deg, #5c8d89, #3a6351); /* modern gradient */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .navbar img {
-    height: 5rem;
+    height: 4.5rem;
     border-radius: 12px;
-    padding-left: 30px;
+    transition: transform 0.3s ease;
+}
+.navbar img:hover {
+    transform: scale(1.05);
 }
 
-.navbar,
-.logo {
-    font-size: 20px;
-    font-weight: 100px;
-}
-
-.navbar,
 #nav-ul {
     display: flex;
-    padding: 25px;
-}
-
-#nav-ul,
-#nav-li {
+    gap: 30px;
     list-style: none;
-    margin-left: 30px;
-    transition: .5s;
 }
-
-.navbar #nav-ul li:hover a,
-.navbar #nav-ul li.active a {
-    color:darkslategrey;
-}
-
-.navbar a {
+#nav-ul li a {
     text-decoration: none;
-    color:#F3F0E6;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+#nav-ul li a:hover {
+    color: #ffd369;
+    border-bottom: 2px solid #ffd369;
+    padding-bottom: 5px;
 }
 
-.home{
+/* HOME SECTION */
+.home {
+    padding-top: 150px;
+    text-align: center; 
+}
+.home h1 {
+    color:brown;
+    text-decoration: underline;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* PRODUCTS GRID */
+.container .product-box {
+    display: flex;
+    gap: 2rem;
+    padding: 4rem 5%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 15.5rem;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-list:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.product-list img {
+    height: 10rem;
+    width: 12rem;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+.product-list img:hover {
+    transform: scale(1.05);
+}
+
+.product-list p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #2c2c54;
+}
+.product-list span {
+    font-size: 1rem;
+    color: #5c8d89;
+    font-weight: bold;
+}
+.product-list a {
     margin-top: 10px;
+    text-decoration: none;
+    background: #5c8d89;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+.product-list a:hover {
+    background: #3a6351;
+}
+
+/*FOOTER SECTION*/
+
+.footer {
+    background: #111;
+    color: #ddd;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    bottom: 0;
+    width: 100%;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 70px;
+    margin-bottom: 20px;
+}
+.footer-box h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-box ul li {
+    margin: 8px 0;
+}
+.footer-box ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-box ul li a:hover {
+    color: #fff;
+}
+
+.social-links{
+    margin-top: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+}
+.social-links a:hover {
+    color: #1e90ff;
+}
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+}
+.footer-box a{
+    color:#ffd369;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* header, content, footer */
 }
