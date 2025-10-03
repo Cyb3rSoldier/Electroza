@@ -169,18 +169,18 @@ body {
     font-weight: bold;
 }
 
-.product-list a {
+.product-list #button {
     margin-top: 10px;
     text-decoration: none;
-    background: #5c8d89;
+    background-color: brown;
     color: #fff;
     padding: 8px 15px;
     border-radius: 8px;
     transition: background 0.3s ease;
 }
 
-.product-list a:hover {
-    background: #3a6351;
+.product-list #button:hover {
+    background-color: rgb(121, 34, 34);
 }
 
 /*FOOTER SECTION*/
@@ -296,7 +296,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Features */
 .features {
     display: flex;
     gap: 30px;
@@ -317,7 +316,6 @@ body {
     font-weight: 600;
 }
 
-/* Contact Info */
 .contact-info {
     margin-bottom: 30px;
 }
@@ -337,9 +335,7 @@ body {
     text-decoration: none;
 }
 
-/* Button */
 .btn {
-    display: inline-block;
     padding: 12px 30px;
     background-color: brown;
     color: #fff;
@@ -363,3 +359,203 @@ body {
         justify-content: space-around;
     }
 }
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 80px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.contact-info h2 span {
+    color: brown;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.contact-info ul li i {
+    color: #ff6f61;
+    margin-right: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+    border-color: brown;
+    outline: none;
+}
+
+.contact-form .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: brown;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form .btn:hover {
+    background-color: rgb(121, 34, 34);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+/* ADMIN LOGIN */
+.admin-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #333;
+}
+
+.login-container h2 i {
+    color: brown;
+    margin-right: 8px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.input-box input:focus {
+    border-color: brown;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: brown;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: rgb(121, 34, 34);
+}
+
+.forgot {
+    margin-top: 15px;
+}
+
+.forgot a {
+    text-decoration: none;
+    color: brown;
+    font-size: 14px;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+}
+
+
