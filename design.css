@@ -343,6 +343,10 @@ body {
     text-decoration: none;
     border-radius: 8px;
     transition: 0.3s;
+    display: flex;          
+    justify-content: center; 
+    align-items: center;   
+    text-align: center;      
 }
 
 .btn:hover {
@@ -531,6 +535,11 @@ body {
     cursor: pointer;
     transition: 0.3s;
     font-size: 16px;
+
+    display: flex;         
+    justify-content: center;
+    align-items: center;     
+    text-align: center;    
 }
 
 .btn:hover {
@@ -556,6 +565,335 @@ body {
     .login-container {
         padding: 30px 20px;
     }
+}
+
+/* PRODUCT DETAILS */
+.product-details {
+  padding: 50px 10%;
+}
+
+.product-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* LEFT SIDE */
+.product-left {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.product-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.product-left h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.product-left .price {
+  font-size: 20px;
+  color: brown;
+  font-weight: bold;
+}
+
+/* RIGHT SIDE */
+.product-right {
+  flex: 2;
+  min-width: 280px;
+}
+
+.product-right h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-right p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.action-buttons {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+/* COD button */
+.btn.cod {
+  background: brown;
+  color: #fff;
+}
+.btn.cod:hover {
+  background-color: rgb(121, 34, 34);
+}
+
+/* Messenger */
+.btn.messenger {
+  background: #0084ff;
+  color: #fff;
+  text-align: center;
+}
+.btn.messenger:hover {
+  background: #006edc;
+}
+
+/* WhatsApp */
+.btn.whatsapp {
+  background: #25d366;
+  color: #fff;
+  text-align: center;
+}
+.btn.whatsapp:hover {
+  background: #1da851;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  margin-top: 20px;
+}
+.contact-info p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+.contact-info i {
+  margin-right: 8px;
+  color:brown;
+}
+
+.contact-info a {
+  color: brown;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .product-right {
+    text-align: left;
+  }
+}
+
+/* PRODUCT DETAILS */
+.product-details {
+  padding: 60px 10%;
+}
+
+.product-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* LEFT SIDE */
+.product-left {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.product-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.product-img:hover {
+  transform: scale(1.05);
+}
+
+.product-left h2 {
+  font-size: 26px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.price {
+  margin-top: 15px;
+}
+.price .current {
+  font-size: 24px;
+  font-weight: bold;
+  color: brown;
+}
+.price .old {
+  font-size: 16px;
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: #888;
+}
+.price .discount {
+  background: brown;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 8px;
+  font-size: 13px;
+}
+
+/* RIGHT SIDE */
+.product-right {
+  flex: 2;
+  min-width: 320px;
+}
+
+.product-right h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.details-box {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid brown;
+  margin-bottom: 25px;
+}
+
+.details-box h4 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  color: #222;
+  font-size: 18px;
+}
+
+.details-box ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+.details-box li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* BUTTONS */
+.action-buttons {
+  margin: 25px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn i {
+  font-size: 18px;
+}
+
+/* COD button */
+.btn.cod {
+  background: brown;
+  color: #fff;
+}
+.btn.cod:hover {
+  background-color: rgb(121, 34, 34);
+}
+
+/* Messenger */
+.btn.messenger {
+  background: #0084ff;
+  color: #fff;
+  align-items: center;
+}
+.btn.messenger:hover {
+  background: #006edc;
+}
+
+/* WhatsApp */
+.btn.whatsapp {
+  background: #25d366;
+  color: #fff;
+  align-items: center;
+}
+.btn.whatsapp:hover {
+  background: #1da851;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  margin-top: 25px;
+  background: #fdfdfd;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+.contact-info p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #444;
+}
+.contact-info i {
+  margin-right: 8px;
+  color: brown;
+}
+.contact-info a {
+  color: brown;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .product-right {
+    text-align: left;
+  }
 }
 
 
