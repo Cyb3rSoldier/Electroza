@@ -9,19 +9,38 @@
     <link rel="website icon" type="jpg" href="electroza.jpg">
 </head>
 
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navUl = document.getElementById('nav-ul');
+
+    menuToggle.addEventListener('click', () => {
+        navUl.classList.toggle('active');
+        document.body.classList.toggle('nav-active');
+    });
+</script>
+
+
 <body>
 
-    <!--NAV BAR SECTION-->
+   <!-- NAV BAR SECTION -->
+<nav class="navbar">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
 
-    <nav class="navbar">
-        <a href="index.html" class="logo"><img src="logo.png"></a>
-        <ul id="nav-ul">
-            <li id="nav-li"><a href="index.html">Home</a></li>
-            <li id="nav-li"><a href="about.html">About</a></li>
-            <li id="nav-li"><a href="contact.html">Contact</a></li>
-            <li id="nav-li"><a href="admin_login.html">Admin Login</a></li>
-        </ul>
-    </nav>
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-ul">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="admin_login.html">Admin Login</a></li>
+    </ul>
+</nav>
+
 
     <!-- HOME SECTION -->
     <section class="home" id="home">
@@ -118,7 +137,8 @@
                 <p><strong>WhatsApp:</strong> <a
                         href="https://api.whatsapp.com/send/?phone=%2B8801835314263&text&type=phone_number&app_absent=0/"
                         target="_blank"><u>+88 0183531426</u></a></p>
-                <p><strong>Messenger:</strong> <a href="https://m.me/61580389409528" target="_blank"><u>Chat with us</u></a></p>
+                <p><strong>Messenger:</strong> <a href="https://m.me/61580389409528" target="_blank"><u>Chat with
+                            us</u></a></p>
             </div>
 
             <div class="footer-box">
