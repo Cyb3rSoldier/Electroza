@@ -19,23 +19,22 @@
             <li id="nav-li"><a href="index.html">Home</a></li>
             <li id="nav-li"><a href="about.html">About</a></li>
             <li id="nav-li"><a href="contact.html">Contact</a></li>
-            <li id="nav-li"><a href="admin_login.html">Admin Login</a></li>
+            <li id="nav-li"><a href="admin_login.php">Admin Login</a></li>
         </ul>
     </nav>
 
     <!-- ADMIN LOGIN SECTION -->
     <section class="admin-login">
         <div class="login-container">
-            <h2><i class="fas fa-user-shield"></i> Admin Login</h2>
-            <form action="admin_dashboard.html" method="post">
+            <h2><u>Admin Login</u></h2>
+            <form action="admin_control.php" method="post">
                 <div class="input-box">
-                    <i class="fas fa-envelope"></i>
-                    <input type="text" name="username" placeholder="Email or Username" required>
+                    <input type="text" name="email" placeholder="Enter Email" required>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Enter Password" required>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn" name="login">Login</button>
                 <p class="forgot"><a href="#">Forgot Password?</a></p>
             </form>
         </div>
@@ -66,6 +65,7 @@
                     <li><a href="#home">Shop</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin_login.php">Admin Login</a></li>
                 </ul>
             </div>
 
