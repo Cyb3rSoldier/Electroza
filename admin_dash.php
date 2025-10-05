@@ -34,8 +34,7 @@ if (!isset($_SESSION['admin_email'])) {
     <!-- DASHBOARD CONTENT -->
     <section class="dashboard">
         <h1>Welcome, <?php echo htmlspecialchars($_SESSION['admin_name']); ?>!</h1>
-        <p>This is your secure admin dashboard.</p>
-        <!-- You can add admin features here -->
+        <p>This is admin dashboard.</p>
     </section>
 
     <!--FOOTER SECTION-->
@@ -51,7 +50,7 @@ if (!isset($_SESSION['admin_email'])) {
                         target="_blank"><u>team.electroza@gmail.com</u></a></p>
                 <p><strong>WhatsApp:</strong> <a
                         href="https://api.whatsapp.com/send/?phone=%2B8801835314263&text&type=phone_number&app_absent=0/"
-                        target="_blank"><u>+88 0183531426</u></a></p>
+                        target="_blank"><u>+88 01835314263</u></a></p>
                 <p><strong>Messenger:</strong> <a href="https://m.me/61580389409528" target="_blank"><u>Chat with
                             us</u></a></p>
             </div>
@@ -62,7 +61,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#container">Shop</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="admin_login.php">Admin Login</a></li>
                 </ul>
             </div>

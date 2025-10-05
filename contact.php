@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +22,7 @@
         <ul id="nav-ul">
             <li id="nav-li"><a href="index.html">Home</a></li>
             <li id="nav-li"><a href="about.html">About</a></li>
-            <li id="nav-li"><a href="contact.html">Contact</a></li>
+            <li id="nav-li"><a href="contact.php">Contact</a></li>
             <li id="nav-li"><a href="admin_login.php">Admin Login</a></li>
         </ul>
     </nav>
@@ -28,10 +32,10 @@
         <p align="center" id="home2">For Order</p>
         <div class="home-content">
             <p>
-                Call: <strong>+88 0183531426</strong> |
+                Call: <strong>+88 01835314263</strong> |
                 WhatsApp: <a
                     href="https://api.whatsapp.com/send/?phone=%2B8801835314263&text&type=phone_number&app_absent=0/"
-                    target="_blank"><u>+88 0183531426</u></a> |
+                    target="_blank"><u>+88 01835314263</u></a> |
                 Facebook: <a href="https://www.facebook.com/profile.php?id=61580389409528"
                     target="_blank"><u>Electroza</u></a> |
                 Messenger: <a href="https://m.me/61580389409528" target="_blank"><u>Chat with us</u></a>
@@ -40,37 +44,46 @@
     </section>
 
     <!-- CONTACT SECTION -->
-<section class="contact-section" id="contact">
-    <div class="contact-container">
-        
-        <!-- Left Column: Contact Info -->
-        <div class="contact-info">
-            <h2>Contact <span>Electroza</span></h2>
-            <p>We’d love to hear from you! Reach out for orders, support, or any inquiries.</p>
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
 
-            <ul>
-                <li>Call: +88 01835314263</li>
-                <li>WhatsApp: <a href="https://api.whatsapp.com/send/?phone=%2B8801835314263" target="_blank">+88 01835314263</a></li>
-                <li>Email: <a href="mailto:team.electroza@gmail.com">team.electroza@gmail.com</a></li>
-                <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61580389409528" target="_blank">Electroza</a></li>
-                <li>Messenger: <a href="https://m.me/61580389409528" target="_blank">Chat with us</a></li>
-            </ul>
+            <!-- Left Column: Contact Info -->
+            <div class="contact-info">
+                <h2>Contact <span>Electroza</span></h2>
+                <p>We’d love to hear from you! Reach out for orders, support, or any inquiries.</p>
+
+                <ul>
+                    <li>Call: +88 01835314263</li>
+                    <li>WhatsApp: <a href="https://api.whatsapp.com/send/?phone=%2B8801835314263" target="_blank">+88 01835314263</a></li>
+                    <li>Email: <a href="mailto:team.electroza@gmail.com">team.electroza@gmail.com</a></li>
+                    <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61580389409528" target="_blank">Electroza</a></li>
+                    <li>Messenger: <a href="https://m.me/61580389409528" target="_blank">Chat with us</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Contact Form -->
+            <div class="contact-form" id="contact">
+                <h2>Send us a Message</h2>
+                <form action="contact_control.php" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="contact" placeholder="Your Contact" required>
+                    <textarea name="message" rows="6" placeholder="Your Message/Feedback" required></textarea>
+                    <!-- Success message -->
+                    <div class="form-message">
+                        <?php
+                        if (isset($_SESSION['message_success'])) {
+                            echo "<span>" . $_SESSION['message_success'] . "</span>";
+                            unset($_SESSION['message_success']);
+                        }
+                        ?>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
         </div>
-
-        <!-- Right Column: Contact Form -->
-        <div class="contact-form">
-            <h2>Send us a Message</h2>
-            <form action="" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="text" name="contact" placeholder="Your Contact" required>
-                <textarea name="message" rows="6" placeholder="Your Message/Feedback" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-
-    </div>
-</section>
+    </section>
 
 
     <!--FOOTER SECTION-->
@@ -96,7 +109,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#home">Shop</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="admin_login.php">Admin Login</a></li>
                 </ul>
             </div>

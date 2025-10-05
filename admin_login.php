@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +22,7 @@
         <ul id="nav-ul">
             <li id="nav-li"><a href="index.html">Home</a></li>
             <li id="nav-li"><a href="about.html">About</a></li>
-            <li id="nav-li"><a href="contact.html">Contact</a></li>
+            <li id="nav-li"><a href="contact.php">Contact</a></li>
             <li id="nav-li"><a href="admin_login.php">Admin Login</a></li>
         </ul>
     </nav>
@@ -29,10 +33,20 @@
             <h2><u>Admin Login</u></h2>
             <form action="admin_control.php" method="post">
                 <div class="input-box">
-                    <input type="text" name="email" placeholder="Enter Email" required>
+                    <input type="email" name="email" placeholder="Enter Email" required>
                 </div>
                 <div class="input-box">
                     <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+
+                <!-- Show session messages -->
+                <div class="form-message">
+                    <?php
+                    if (isset($_SESSION['login_error'])) {
+                        echo "<span>" . $_SESSION['login_error'] . "</span>";
+                        unset($_SESSION['login_error']); // clear message after showing
+                    }
+                    ?>
                 </div>
                 <button type="submit" class="btn" name="login">Login</button>
                 <p class="forgot"><a href="#">Forgot Password?</a></p>
@@ -64,7 +78,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#home">Shop</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="admin_login.php">Admin Login</a></li>
                 </ul>
             </div>
