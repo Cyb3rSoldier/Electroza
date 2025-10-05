@@ -753,6 +753,10 @@ body {
   text-decoration: underline;
 }
 
+.product-details .more-product p{
+margin-top: 4rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .product-container {

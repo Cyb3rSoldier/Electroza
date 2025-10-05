@@ -59,7 +59,7 @@ if (!isset($_SESSION['admin_email'])) {
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#container">Shop</a></li>
+                    <li><a href="index.html#container">Shop</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="admin_login.php">Admin Login</a></li>
