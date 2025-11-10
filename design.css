@@ -771,7 +771,7 @@ margin-top: 4rem;
 
 /* PRODUCT DETAILS */
 .product-details {
-  padding: 60px 10%;
+  padding: 80px 10% 60px;
 }
 
 .product-container {
@@ -803,9 +803,16 @@ margin-top: 4rem;
 }
 
 .product-left h2 {
-  font-size: 26px;
+  font-size: 20px;
   margin: 10px 0;
   color: #333;
+  font-weight: 600;
+}
+
+.product-left p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
 }
 
 .price {
@@ -841,9 +848,10 @@ margin-top: 4rem;
 }
 
 .product-right h3 {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 15px;
-  color: #444;
+  color: #333;
+  font-weight: 600;
 }
 
 .details-box {
@@ -854,11 +862,19 @@ margin-top: 4rem;
   margin-bottom: 25px;
 }
 
+.details-box p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
 .details-box h4 {
   margin-top: 18px;
   margin-bottom: 10px;
   color: #222;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .details-box ul {
@@ -868,38 +884,40 @@ margin-top: 4rem;
 
 .details-box li {
   margin-bottom: 8px;
-  font-size: 15px;
+  font-size: 14px;
   color: #555;
+  line-height: 1.5;
 }
 
-/* BUTTONS */
+/* ACTION BUTTONS */
 .action-buttons {
   margin: 25px 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 14px;
 }
 
 .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   gap: 8px;
-  padding: 14px 20px;
+  padding: 12px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-size: 15px;
-  font-weight: bold;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
   cursor: pointer;
   border: none;
+  width: 100%;
 }
 
 .btn i {
   font-size: 18px;
 }
 
-/* COD button */
+/* COD BUTTON */
 .btn.cod {
   background: brown;
   color: #fff;
@@ -909,29 +927,27 @@ margin-top: 4rem;
   background-color: rgb(121, 34, 34);
 }
 
-/* Messenger */
+/* MESSENGER BUTTON */
 .btn.messenger {
   background: #0084ff;
   color: #fff;
-  align-items: center;
 }
 
 .btn.messenger:hover {
   background: #006edc;
 }
 
-/* WhatsApp */
+/* WHATSAPP BUTTON */
 .btn.whatsapp {
   background: #25d366;
   color: #fff;
-  align-items: center;
 }
 
 .btn.whatsapp:hover {
   background: #1da851;
 }
 
-/* CONTACT INFO */
+/* CONTACT INFO BOX */
 .contact-info {
   margin-top: 25px;
   background: #fdfdfd;
@@ -942,13 +958,13 @@ margin-top: 4rem;
 
 .contact-info p {
   margin: 8px 0;
-  font-size: 15px;
+  font-size: 14px;
   color: #444;
 }
 
 .contact-info i {
-  margin-right: 8px;
   color: brown;
+  margin-right: 8px;
 }
 
 .contact-info a {
@@ -960,7 +976,123 @@ margin-top: 4rem;
   text-decoration: underline;
 }
 
-/* PRODUCT DETAILS RESPONSIVE */
+/* MORE PRODUCTS LINK */
+.more-product {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.more-product p {
+  font-size: 16px;
+}
+
+.more-product a {
+  color: brown;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ========================================
+   BOOTSTRAP MODAL STYLING
+======================================== */
+
+.modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: brown;
+  color: white;
+  padding: 20px;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.btn-close {
+  background: white;
+  opacity: 1;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+.modal-body label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="number"],
+.modal-body select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.modal-body input:focus,
+.modal-body select:focus {
+  outline: none;
+  border-color: brown;
+}
+
+.modal-body select {
+  cursor: pointer;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #e8e8e8;
+  gap: 10px;
+}
+
+.modal-footer .btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.modal-footer .btn-secondary {
+  background: #6c757d;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background: #5a6268;
+}
+
+.modal-footer .btn-success {
+  background: #28a745;
+  border: none;
+}
+
+.modal-footer .btn-success:hover {
+  background: #218838;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
 @media (max-width: 1024px) {
   .product-container {
     gap: 30px;
@@ -973,20 +1105,23 @@ margin-top: 4rem;
   }
 
   .product-left h2 {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .product-right h3 {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
+  .product-details {
+    padding: 80px 5% 50px;
+  }
+
   .product-container {
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-    text-align: center;
   }
 
   .product-left,
@@ -1004,21 +1139,25 @@ margin-top: 4rem;
   }
 
   .action-buttons {
-    justify-content: center;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .product-details {
-    padding: 30px 5%;
+    padding: 70px 4% 40px;
+  }
+
+  .product-container {
+    padding: 15px;
   }
 
   .product-left h2 {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .product-right h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .price .current {
@@ -1035,19 +1174,34 @@ margin-top: 4rem;
   }
 
   .btn {
-    padding: 12px 16px;
+    padding: 11px 16px;
     font-size: 14px;
+  }
+
+  .details-box {
+    padding: 15px;
   }
 
   .details-box h4 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .details-box li {
-    font-size: 14px;
+    font-size: 13px;
+  }
+
+  .modal-body {
+    padding: 20px 15px;
+  }
+
+  .modal-header {
+    padding: 15px;
+  }
+
+  .modal-title {
+    font-size: 18px;
   }
 }
-
 /*ADMIN DASHBOARD*/
 
 .dashboard {
