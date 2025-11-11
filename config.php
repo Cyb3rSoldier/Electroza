@@ -2,10 +2,10 @@
 
 //this php fie is for database connection!
 
-$host = "sql207.infinityfree.com"; /* localhost */
-$user = "if0_39865928"; /* root */
-$password = "Ofr243274done"; /*  */
-$database = "if0_39865928_electroza"; /* electroza */
+$host = "localhost"; /* sql207.infinityfree.com */
+$user = "root"; /* if0_39865928 */
+$password = ""; /* Ofr243274done */
+$database = "electroza"; /* if0_39865928_electroza */
 
 $conn = new mysqli($host, $user, $password, $database);
 

@@ -90,64 +90,73 @@ session_start();
                 <!-- Buttons -->
                 <div class="action-buttons">
                     <button class="btn cod" data-bs-toggle="modal" data-bs-target="#exampleModal">Cash on Delivery</button>
-                    <div>
-                        <a href="https://m.me/61580389409528" target="_blank" class="btn messenger">
-                            <i class="fab fa-facebook-messenger"></i> Order via Messenger
-                        </a>
-                        <a href="https://wa.me/8801835314263" target="_blank" class="btn whatsapp">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                        </a>
-                    </div>
+                    <a href="https://m.me/61580389409528" target="_blank" class="btn messenger">
+                        Order via Messenger
+                    </a>
+                    <a href="https://wa.me/8801835314263" target="_blank" class="btn whatsapp">
+                        Order via WhatsApp
+                    </a>
+                </div>
 
-                    <!-- Contact Info -->
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> Call: +88 01835314263</p>
-                        <p><i class="fas fa-envelope"></i> Email:
-                            <a href="mailto:team.electroza@gmail.com" target="_blank">team.electroza@gmail.com</a>
-                        </p>
-                        <p><i class="fab fa-facebook"></i> Facebook:
-                            <a href="https://www.facebook.com/profile.php?id=61580389409528" target="_blank">Electroza</a>
-                        </p>
-                    </div>
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> Call: <a href="tel:+8801835314263"><u>+88 01835314263</u></a></p>
+                    <p><i class="fas fa-envelope"></i> Email:
+                        <a href="mailto:team.electroza@gmail.com" target="_blank">team.electroza@gmail.com</a>
+                    </p>
+                    <p><i class="fab fa-facebook"></i> Facebook:
+                        <a href="https://www.facebook.com/profile.php?id=61580389409528" target="_blank">Electroza</a>
+                    </p>
                 </div>
             </div>
-            <!-- BOOTSTRAP Modal -->
+        </div>
+        <!-- BOOTSTRAP Modal -->
 
-            <form action="control.php" method="post">
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">ADD Data</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <form action="product_control.php" method="post">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">ORDER HERE!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><b>❌</b></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="">Name:</label>
+                            <input type="text" name="name" placeholder="Enter your full name" required>
+                            <label for="">Product Name:</label>
+                            <select name="product" placeholder="Select Your Product" required>
+                                <option value="">--Select Product--</option>
+                                <option value="product">#101 - G63 Speaker Lamp – APP Control 3-in-1 Multi-Function</option>
+                                <option value="product">#102 - 3-in-1 Humidifier</option>
+                                <option value="product">#103 - UltraPods Max TWS 5.3 Wireless Earphones</option>
+                                <option value="product">#104 - Ultra-Bright LED Flashlight</option>
+                                <option value="product">#105 - Portable USB Rechargeable Mini Fan</option>
+                                <option value="product">#106 - High Speed Folding Cooling Fan With led light</option>
+                            </select>
+                            <div class="quantity-box">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" id="quantity" name="qnt" value="1" min="1" required>
                             </div>
-                            <div class="modal-body">
-                                <label for="" placeholder="Enter your full name" required>Name:</label><br>
-                                <input type="text" name="name"><br>
-                                <label for="">Product Name:</label><br>
-                                <select name="product">
-                                    <option value="product">G63 Speaker Lamp – APP Control 3-in-1 Multi-Function</option>
-                                </select>
-                                <label for="" required>Quantity:</label><br>
-                                <input type="number" name="qnt"><br>
-                                <label for="" placeholder="Enter your full location" required>Location:</label><br>
-                                <input type="text" name="location"><br>
-                                <label for="" placeholder="if any">Extra Description:</label><br>
-                                <input type="text" name="description"><br>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-success">Confirm Order</button>
-                            </div>
+                            <label for="">Phone Number:</label>
+                            <input type="number" name="contact" placeholder="Enter your phone number" required>
+                            <label for="">Location:</label>
+                            <textarea name="location" placeholder="Enter your full location" required></textarea>
+                            <label>Extra Description:</label>
+                            <textarea name="description" placeholder="If any"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Confirm Order</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
-            </form>
-
-            <div class="more-product">
-                <p align="center"><a href="index.php#container"><u><b>Explore More Products</b></u></a></p>
             </div>
+        </form>
     </section>
+
+    <div class="more-product">
+        <p align="center"><a href="index.php#container"><u><b>Explore More Products</b></u></a></p>
+    </div>
 
 
     <!-- FOOTER -->

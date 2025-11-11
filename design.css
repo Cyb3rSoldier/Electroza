@@ -787,7 +787,7 @@ margin-top: 4rem;
 /* LEFT SIDE */
 .product-left {
   flex: 1;
-  min-width: 300px;
+  min-width: 400px;
   text-align: center;
 }
 
@@ -901,7 +901,7 @@ margin-top: 4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 8px !important;
   padding: 12px 20px;
   border-radius: 8px;
   text-decoration: none;
@@ -913,37 +913,33 @@ margin-top: 4rem;
   width: 100%;
 }
 
-.btn i {
-  font-size: 18px;
-}
-
 /* COD BUTTON */
-.btn.cod {
+.btn .cod {
   background: brown;
   color: #fff;
 }
 
-.btn.cod:hover {
+.btn .cod:hover {
   background-color: rgb(121, 34, 34);
 }
 
 /* MESSENGER BUTTON */
-.btn.messenger {
+.btn .messenger {
   background: #0084ff;
   color: #fff;
 }
 
-.btn.messenger:hover {
+.btn .messenger:hover {
   background: #006edc;
 }
 
 /* WHATSAPP BUTTON */
-.btn.whatsapp {
+.btn .whatsapp {
   background: #25d366;
   color: #fff;
 }
 
-.btn.whatsapp:hover {
+.btn .whatsapp:hover {
   background: #1da851;
 }
 
@@ -978,12 +974,12 @@ margin-top: 4rem;
 
 /* MORE PRODUCTS LINK */
 .more-product {
-  margin-top: 40px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
 .more-product p {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .more-product a {
@@ -1000,6 +996,7 @@ margin-top: 4rem;
   border-radius: 12px;
   border: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 700px;
 }
 
 .modal-header {
@@ -1012,38 +1009,39 @@ margin-top: 4rem;
 
 .modal-title {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 35px;
 }
 
 .btn-close {
-  background: white;
+  background: #ffd369;
+  color: brown;
   opacity: 1;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  font-weight: 900;
 }
 
 .modal-body {
-  padding: 25px;
+  padding: 20px;
 }
 
 .modal-body label {
   display: block;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 6px;
-  margin-top: 12px;
-  font-size: 14px;
+  font-weight: 300;
+  color: black;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .modal-body input[type="text"],
 .modal-body input[type="number"],
 .modal-body select {
   width: 100%;
-  padding: 10px 14px;
+  padding: 8px 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 10px;
   transition: border-color 0.3s ease;
 }
@@ -1053,6 +1051,41 @@ margin-top: 4rem;
   outline: none;
   border-color: brown;
 }
+
+.modal-body textarea {
+  width: 100%;
+  height: 100px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: vertical; /* allows resizing if user wants */
+  transition: border-color 0.3s ease;
+}
+
+.modal-body textarea:focus {
+  outline: none;
+  border-color: brown;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  gap:10px;
+}
+
+#quantity {
+  text-align: center;
+  width: 100px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  height: 35px;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
 
 .modal-body select {
   cursor: pointer;
@@ -1072,12 +1105,12 @@ margin-top: 4rem;
 }
 
 .modal-footer .btn-secondary {
-  background: #6c757d;
+  background: brown;
   border: none;
 }
 
 .modal-footer .btn-secondary:hover {
-  background: #5a6268;
+  background: rgb(110, 24, 24);
 }
 
 .modal-footer .btn-success {
