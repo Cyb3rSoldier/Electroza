@@ -26,3 +26,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: contact.php#contact");
     exit();
 }
+?>

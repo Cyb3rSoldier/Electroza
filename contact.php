@@ -28,7 +28,7 @@ session_start();
                 <p>We’d love to hear from you! Reach out for orders, support, or any inquiries.</p>
 
                 <ul>
-                    <li>Call: +88 01835314263</li>
+                    <li>Call: <a href="tel:+8801835314263"><u>+88 01835314263</u></a></li>
                     <li>WhatsApp: <a href="https://api.whatsapp.com/send/?phone=%2B8801835314263" target="_blank">+88 01835314263</a></li>
                     <li>Email: <a href="mailto:team.electroza@gmail.com">team.electroza@gmail.com</a></li>
                     <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61580389409528" target="_blank">Electroza</a></li>

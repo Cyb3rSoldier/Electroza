@@ -500,6 +500,7 @@ body {
 }
 
 .contact-form .form-message,
+.modal-dialog .form-message,
 .admin-login .form-message {
   text-align: center;
   margin-top: 15px;
@@ -510,6 +511,7 @@ body {
 }
 
 .contact-form .form-message span,
+.modal-dialog .form-message span
 .admin-login .form-message span {
   display: inline-block;
 }
@@ -949,12 +951,12 @@ margin-top: 4rem;
   background: #fdfdfd;
   padding: 15px;
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 2px solid #eee;
 }
 
 .contact-info p {
   margin: 8px 0;
-  font-size: 14px;
+  font-size: 18px;
   color: #444;
 }
 
@@ -1239,7 +1241,6 @@ margin-top: 4rem;
 
 .dashboard {
   margin-top: 8rem;
-  margin-bottom: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1249,4 +1250,238 @@ margin-top: 4rem;
 
 .dashboard h1 {
   color: brown;
+}
+
+/* ADMIN TABLE SECTION */
+.table {
+  padding: 40px 5%;
+  margin-bottom: 60px;
+}
+
+.table h1 {
+  text-align: center;
+  color: brown;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: linear-gradient(90deg, #5c8d89, #3a6351);
+  color: #fff;
+}
+
+.table thead tr th {
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table thead tr th:last-child {
+  border-right: none;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background: #f9f9f9;
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr td {
+  padding: 16px 15px;
+  font-size: 15px;
+  color: #333;
+  vertical-align: top;
+  border-right: 1px solid #f0f0f0;
+}
+
+.table tbody tr td:last-child {
+  border-right: none;
+}
+
+.table tbody tr td:first-child {
+  font-weight: 600;
+  color: brown;
+}
+
+/* Alternating row colors */
+.table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Scrollable table on smaller screens */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Empty state */
+.table tbody tr.no-data td {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .table thead tr th,
+  .table tbody tr td {
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+  
+  .table h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .table {
+    padding: 30px 3%;
+  }
+  
+  .table h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Make table scrollable horizontally */
+  .table table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .table thead,
+  .table tbody,
+  .table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .table thead tr th,
+  .table tbody tr td {
+    padding: 12px 10px;
+    font-size: 12px;
+    min-width: 100px;
+  }
+  
+  .table thead tr th:first-child,
+  .table tbody tr td:first-child {
+    min-width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table {
+    padding: 20px 2%;
+  }
+  
+  .table h1 {
+    font-size: 1.5rem;
+  }
+  
+  .table thead tr th,
+  .table tbody tr td {
+    padding: 10px 8px;
+    font-size: 11px;
+    min-width: 80px;
+  }
+  
+  .table thead tr th {
+    font-size: 10px;
+  }
+}
+
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+
+.admin-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.add-btn {
+    background-color: brown;
+    color: #fff;
+}
+
+.add-btn:hover {
+    background-color: rgb(94, 21, 21);
+}
+
+.action-buttons-group {
+    display: flex;
+    gap: 8px; 
+    justify-content: center;
+}
+
+
+.edit-btn {
+    background-color: #0084ff;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.edit-btn:hover {
+    background-color: #006edc;
+}
+
+.delete-btn {
+    background-color: brown; 
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(121, 34, 34);
+}
+
+.edit-btn i,
+.delete-btn i {
+    margin: 0;
 }

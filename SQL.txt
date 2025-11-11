@@ -1,0 +1,19 @@
+***ORDER TABLE***
+
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    product VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
+    contact VARCHAR(20) NOT NULL,
+    location TEXT NOT NULL,
+    description TEXT NULL,
+    order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+***INSERT ADMIN INFO***
+
+INSERT INTO admin_info (name, email, password, created_at)
+VALUES ('Omar', 'omar@gmail.com', '$2b$12$N9qo8uLOickgx2ZMRZo4ie7D2n6S4E0.v2jUHu2h9z1Aq7lD/7jG6', NOW());
+
+UPDATE `admin_info` SET `password` = '$2y$10$SEC7fc0nbPtSLDv/aqtH2ewj9PBsO4LQv5smSdl7at6IzMLy.g4Jq', `created_at` = CURRENT_TIME() WHERE `admin_info`.`id` = 2;

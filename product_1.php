@@ -112,7 +112,7 @@ session_start();
         </div>
         <!-- BOOTSTRAP Modal -->
 
-        <form action="product_control.php" method="post">
+        <form action="product_control.php" method="post" id="bootstrap modal">
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -121,29 +121,40 @@ session_start();
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><b>❌</b></button>
                         </div>
                         <div class="modal-body">
-                            <label for="">Name:</label>
+                            <label>Name:</label>
                             <input type="text" name="name" placeholder="Enter your full name" required>
-                            <label for="">Product Name:</label>
+                            <label>Product Name:</label>
                             <select name="product" placeholder="Select Your Product" required>
                                 <option value="">--Select Product--</option>
-                                <option value="product">#101 - G63 Speaker Lamp – APP Control 3-in-1 Multi-Function</option>
-                                <option value="product">#102 - 3-in-1 Humidifier</option>
-                                <option value="product">#103 - UltraPods Max TWS 5.3 Wireless Earphones</option>
-                                <option value="product">#104 - Ultra-Bright LED Flashlight</option>
-                                <option value="product">#105 - Portable USB Rechargeable Mini Fan</option>
-                                <option value="product">#106 - High Speed Folding Cooling Fan With led light</option>
+                                <option value="101 - G63 Speaker Lamp – APP Control 3-in-1 Multi-Function">#101 - G63 Speaker Lamp – APP Control 3-in-1 Multi-Function</option>
+                                <option value="102 - 3-in-1 Humidifier">#102 - 3-in-1 Humidifier</option>
+                                <option value="103 - UltraPods Max TWS 5.3 Wireless Earphones">#103 - UltraPods Max TWS 5.3 Wireless Earphones</option>
+                                <option value="104 - Ultra-Bright LED Flashlight">#104 - Ultra-Bright LED Flashlight</option>
+                                <option value="105 - Portable USB Rechargeable Mini Fan">#105 - Portable USB Rechargeable Mini Fan</option>
+                                <option value="106 - High Speed Folding Cooling Fan With led light">#106 - High Speed Folding Cooling Fan With led light</option>
                             </select>
                             <div class="quantity-box">
                                 <label for="quantity">Quantity:</label>
-                                <input type="number" id="quantity" name="qnt" value="1" min="1" required>
+                                <input type="number" id="quantity" name="quantity" value="1" min="1" required>
                             </div>
-                            <label for="">Phone Number:</label>
+                            <label>Phone Number:</label>
                             <input type="number" name="contact" placeholder="Enter your phone number" required>
-                            <label for="">Location:</label>
+                            <label>Location:</label>
                             <textarea name="location" placeholder="Enter your full location" required></textarea>
                             <label>Extra Description:</label>
                             <textarea name="description" placeholder="If any"></textarea>
                         </div>
+                        <!-- Success message -->
+
+                        <div class="form-message">
+                            <?php
+                            if (isset($_SESSION['message_success'])) {
+                                echo "<span>" . $_SESSION['message_success'] . "</span>";
+                                unset($_SESSION['message_success']);
+                            }
+                            ?>
+                        </div>
+
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-success">Confirm Order</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -165,6 +176,12 @@ session_start();
     <!-- JAVASCRIPT -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        <?php if (isset($_GET['showModal'])) : ?>
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
+        <?php endif; ?>
+    </script>
 
 </body>
 

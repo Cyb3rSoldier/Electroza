@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 
-    header("Location: product_1.php?showModal=true");
+    header("Location: admin_dash.php?showModal=true");
     exit();
 }
 ?>
