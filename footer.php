@@ -22,7 +22,7 @@
                         target="_blank"><u>team.electroza@gmail.com</u></a></p>
                 <p><strong>WhatsApp:</strong> <a
                         href="https://api.whatsapp.com/send/?phone=%2B8801835314263&text&type=phone_number&app_absent=0/"
-                        target="_blank"><u>+88 0183531426</u></a></p>
+                        target="_blank"><u>+88 01835314263</u></a></p>
                 <p><strong>Messenger:</strong> <a href="https://m.me/61580389409528" target="_blank"><u>Chat with
                             us</u></a></p>
             </div>

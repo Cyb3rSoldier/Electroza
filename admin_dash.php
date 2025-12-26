@@ -45,7 +45,7 @@ if (!isset($_SESSION['admin_email'])) {
         <div class="table-header">
             <h1>Product INFO:</h1>
             <button class="admin-btn add-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fas fa-plus"></i> Add Product
+                ☑ Add Product
             </button>
 
             <!-- BOOTSTRAP Modal -->
