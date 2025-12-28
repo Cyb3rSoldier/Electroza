@@ -31,7 +31,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background:  #284452;
+  background: #283847; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -110,9 +110,9 @@ body {
 
 /* HOME SECTION */
 .home {
-  padding: 120px 20px 40px;
+  padding: 100px 20px 40px;
   text-align: center;
-  background: #283847;
+  background:#11120D;
   color: #fff;
   font-family: 'Trebuchet MS', Arial, sans-serif;
   box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.25);
@@ -510,8 +510,7 @@ body {
 }
 
 .contact-form .form-message span,
-.modal-dialog .form-message span
-.admin-login .form-message span {
+.modal-dialog .form-message span .admin-login .form-message span {
   display: inline-block;
 }
 
@@ -754,8 +753,8 @@ body {
   text-decoration: underline;
 }
 
-.product-details .more-product p{
-margin-top: 4rem;
+.product-details .more-product p {
+  margin-top: 4rem;
 }
 
 /* Responsive */
@@ -1060,7 +1059,8 @@ margin-top: 4rem;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 16px;
-  resize: vertical; /* allows resizing if user wants */
+  resize: vertical;
+  /* allows resizing if user wants */
   transition: border-color 0.3s ease;
 }
 
@@ -1074,7 +1074,7 @@ margin-top: 4rem;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  gap:10px;
+  gap: 10px;
 }
 
 #quantity {
@@ -1236,35 +1236,31 @@ margin-top: 4rem;
     font-size: 18px;
   }
 }
+
 /*ADMIN DASHBOARD*/
 
-.dashboard {
-  margin-top: 8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-}
-
-.dashboard h1 {
-  color: brown;
+.dashboard h4{
+  color:antiquewhite;
+  font-weight: 900;
+  padding-left: 5rem;
 }
 
 /* ADMIN TABLE SECTION */
 .table {
   padding: 40px 5%;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  margin-top: 60px;
 }
 
 .table h1 {
   text-align: center;
   color: brown;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 30px;
   text-decoration: underline;
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-weight: 900;
 }
 
 .table table {
@@ -1346,12 +1342,13 @@ margin-top: 4rem;
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+
   .table thead tr th,
   .table tbody tr td {
     padding: 14px 12px;
     font-size: 13px;
   }
-  
+
   .table h1 {
     font-size: 2rem;
   }
@@ -1361,19 +1358,19 @@ margin-top: 4rem;
   .table {
     padding: 30px 3%;
   }
-  
+
   .table h1 {
     font-size: 1.8rem;
     margin-bottom: 20px;
   }
-  
+
   /* Make table scrollable horizontally */
   .table table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
   }
-  
+
   .table thead,
   .table tbody,
   .table tr {
@@ -1381,14 +1378,14 @@ margin-top: 4rem;
     width: 100%;
     table-layout: fixed;
   }
-  
+
   .table thead tr th,
   .table tbody tr td {
     padding: 12px 10px;
     font-size: 12px;
     min-width: 100px;
   }
-  
+
   .table thead tr th:first-child,
   .table tbody tr td:first-child {
     min-width: 50px;
@@ -1399,89 +1396,117 @@ margin-top: 4rem;
   .table {
     padding: 20px 2%;
   }
-  
+
   .table h1 {
     font-size: 1.5rem;
   }
-  
+
   .table thead tr th,
   .table tbody tr td {
     padding: 10px 8px;
     font-size: 11px;
     min-width: 80px;
   }
-  
+
   .table thead tr th {
     font-size: 10px;
   }
 }
 
 .table-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-    padding: 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
 }
 
 .table-header .add-btn {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 
 .admin-btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-size: 13px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 
 .add-btn {
-    background-color: brown;
-    color: #fff;
+  background-color: brown;
+  color: #fff;
 }
 
 .add-btn:hover {
-    background-color: rgb(94, 21, 21);
+  background-color: rgb(94, 21, 21);
 }
 
 .action-buttons-group {
-    display: flex;
-    gap: 8px; 
-    justify-content: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
 }
 
-
 .edit-btn {
-    background-color: #0084ff;
-    color: #fff;
-    padding: 8px 10px;
-    font-size: 13px;
+  background-color: #0084ff;
+  color: #fff;
+  padding: 5px 8px;
+  font-size: 13px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
 .edit-btn:hover {
-    background-color: #006edc;
+  background-color: #006edc;
 }
 
 .delete-btn {
-    background-color: brown; 
-    color: #fff;
-    padding: 8px 10px;
-    font-size: 13px;
+  background-color: brown;
+  color: #fff;
+  padding: 5px 8px;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
-    background-color: rgb(121, 34, 34);
+  background-color: rgb(121, 34, 34);
 }
 
-.edit-btn i,
-.delete-btn i {
-    margin: 0;
+.delete-btn a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.delete-btn a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.delete-btn a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.delete-btn a:active {
+  color: #fff;
+  text-decoration: none;
+}
+.table .dashboard-message{
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: brown;
 }

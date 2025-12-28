@@ -28,17 +28,14 @@ if (!isset($_SESSION['admin_email'])) {
     <!-- NAVBAR -->
     <nav class="navbar">
         <a href="admin_dash.php" class="logo"><img src="logo.png" alt="Logo"></a>
+        <section class="dashboard">
+            <h4>Welcome, <?php echo htmlspecialchars($_SESSION['admin_name']); ?>! to Admin Dashboard.</h4>
+        </section>
         <ul id="nav-ul">
             <li><a href="admin_dash.php">Dashboard</a></li>
             <li><a href="admin_logout.php">Logout</a></li>
         </ul>
     </nav>
-
-    <!-- DASHBOARD CONTENT -->
-    <section class="dashboard">
-        <h1>Welcome, <?php echo htmlspecialchars($_SESSION['admin_name']); ?>!</h1>
-        <p>This is admin dashboard.</p>
-    </section>
 
     <!-- MANAGE PRODUCT -->
     <section class="table">
@@ -104,6 +101,15 @@ if (!isset($_SESSION['admin_email'])) {
 
         </div>
 
+        <div class="dashboard-message">
+            <?php
+            if (isset($_SESSION['delete_msg'])) {
+                echo "<span>" . $_SESSION['delete_msg'] . "</span>";
+                unset($_SESSION['delete_msg']);
+            }
+            ?>
+        </div>
+
         <table>
             <thead>
                 <tr>
@@ -139,12 +145,23 @@ if (!isset($_SESSION['admin_email'])) {
                             <td><?php echo htmlspecialchars($row['order_time']); ?></td>
                             <td>
                                 <div class="action-buttons-group">
-                                    <button class="admin-btn edit-btn" title="Edit">
-                                        <i class="fas fa-edit"></i> Edit
-                                    </button>
-                                    <button class="admin-btn delete-btn" title="Delete">
-                                        <i class="fas fa-trash"></i> Delete
-                                    </button>
+
+                                    <!-- Edit DATA -->
+                                    <form action="edit_page.php" method="POST">
+                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <button type="submit" class="admin-btn edit-btn" title="Edit">
+                                            🔄&nbsp;Edit
+                                        </button>
+                                    </form>
+
+                                    <!-- Delete DATA -->
+                                    <form action="delete_page.php" method="POST">
+                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <button type="submit" class="admin-btn delete-btn" title="Delete"
+                                            onclick="return confirm('Are you sure to delete this Order?');">
+                                            ❌&nbsp;Delete
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
