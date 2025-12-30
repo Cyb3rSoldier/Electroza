@@ -41,18 +41,16 @@ if (!isset($_SESSION['admin_email'])) {
     <section class="table">
         <div class="table-header">
             <h1>Product INFO:</h1>
-            <button class="admin-btn add-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="admin-btn add-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" title="Add Product">
                 ☑ Add Product
             </button>
-
-            <!-- BOOTSTRAP Modal -->
-
-            <form action="product_admin.php" method="post" id="bootstrap modal">
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+            <!-- Modal for add  -->
+            <form action="add_data.php" method="post" id="bootstrap modal">
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">ORDER HERE!</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">ADD Order!</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><b>❌</b></button>
                             </div>
                             <div class="modal-body">
@@ -79,33 +77,31 @@ if (!isset($_SESSION['admin_email'])) {
                                 <label>Extra Description:</label>
                                 <textarea name="description" placeholder="If any"></textarea>
                             </div>
-                            <!-- Success message -->
-
-                            <div class="form-message">
-                                <?php
-                                if (isset($_SESSION['message_success'])) {
-                                    echo "<span>" . $_SESSION['message_success'] . "</span>";
-                                    unset($_SESSION['message_success']);
-                                }
-                                ?>
-                            </div>
-
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success">Confirm Order</button>
+                                <button type="submit" class="btn btn-success">ADD Order</button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-
         </div>
 
         <div class="dashboard-message">
+
             <?php
+            if (isset($_SESSION['message_success'])) {
+                echo "<span>" . $_SESSION['message_success'] . "</span>";
+                unset($_SESSION['message_success']);
+            }
+
             if (isset($_SESSION['delete_msg'])) {
                 echo "<span>" . $_SESSION['delete_msg'] . "</span>";
                 unset($_SESSION['delete_msg']);
+            }
+            if (isset($_SESSION['edit_msg'])) {
+                echo "<span>" . $_SESSION['edit_msg'] . "</span>";
+                unset($_SESSION['edit_msg']);
             }
             ?>
         </div>
@@ -147,15 +143,12 @@ if (!isset($_SESSION['admin_email'])) {
                                 <div class="action-buttons-group">
 
                                     <!-- Edit DATA -->
-                                    <form action="edit_page.php" method="POST">
-                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                        <button type="submit" class="admin-btn edit-btn" title="Edit">
-                                            🔄&nbsp;Edit
-                                        </button>
-                                    </form>
-
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                    <button type="button" class="admin-btn edit-btn" data-bs-toggle="modal" data-bs-target="#editModal<?php echo $row['id']; ?>" title="Edit">
+                                        🔄&nbsp;Edit
+                                    </button>
                                     <!-- Delete DATA -->
-                                    <form action="delete_page.php" method="POST">
+                                    <form action="delete_data.php" method="POST">
                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                         <button type="submit" class="admin-btn delete-btn" title="Delete"
                                             onclick="return confirm('Are you sure to delete this Order?');">
@@ -164,6 +157,78 @@ if (!isset($_SESSION['admin_email'])) {
                                     </form>
                                 </div>
                             </td>
+                            <!-- Modal for edit -->
+                            <form action="edit_data.php" method="post" id="bootstrap modal">
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                <div class="modal fade" id="editModal<?php echo $row['id']; ?>" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Order!</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><b>❌</b></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label>Name:</label>
+                                                <input type="text" name="name" placeholder="Enter your full name" value="<?php echo $row['name'] ?>" required>
+                                                <label>Product Name:</label>
+                                                <select name="product" placeholder="Select Your Product" required>
+                                                    <option value="">--Select Product--</option>
+                                                    <option value="#101 - G63 Speaker Lamp – APP Control 3-in-1 Multi-Function"
+                                                        <?php echo ($row['product'] == '#101 - G63 Speaker Lamp – APP Control 3-in-1 Multi-Function') ? 'selected' : ''; ?>>
+                                                        #101 - G63 Speaker Lamp – APP Control 3-in-1 Multi-Function
+                                                    </option>
+                                                    <option value="#102 - 3-in-1 Humidifier"
+                                                        <?php echo ($row['product'] == '#102 - 3-in-1 Humidifier') ? 'selected' : ''; ?>>
+                                                        #102 - 3-in-1 Humidifier
+                                                    </option>
+                                                    <option value="#103 - UltraPods Max TWS 5.3 Wireless Earphones"
+                                                        <?php echo ($row['product'] == '#103 - UltraPods Max TWS 5.3 Wireless Earphones') ? 'selected' : ''; ?>>
+                                                        #103 - UltraPods Max TWS 5.3 Wireless Earphones
+                                                    </option>
+                                                    <option value="#104 - Ultra-Bright LED Flashlight"
+                                                        <?php echo ($row['product'] == '#104 - Ultra-Bright LED Flashlight') ? 'selected' : ''; ?>>
+                                                        #104 - Ultra-Bright LED Flashlight
+                                                    </option>
+                                                    <option value="#105 - Portable USB Rechargeable Mini Fan"
+                                                        <?php echo ($row['product'] == '#105 - Portable USB Rechargeable Mini Fan') ? 'selected' : ''; ?>>
+                                                        #105 - Portable USB Rechargeable Mini Fan
+                                                    </option>
+                                                    <option value="#106 - High Speed Folding Cooling Fan With led light"
+                                                        <?php echo ($row['product'] == '#106 - High Speed Folding Cooling Fan With led light') ? 'selected' : ''; ?>>
+                                                        #106 - High Speed Folding Cooling Fan With led light
+                                                    </option>
+                                                </select>
+                                                <div class="quantity-box">
+                                                    <label for="quantity">Quantity:</label>
+                                                    <input type="number" id="quantity" name="quantity" value="<?php echo $row['quantity'] ?>" min="1" required>
+                                                </div>
+                                                <label>Phone Number:</label>
+                                                <input type="number" name="contact" placeholder="Enter your phone number" value="<?php echo $row['contact'] ?>" required>
+                                                <label>Location:</label>
+                                                <textarea name="location" placeholder="Enter your full location" required><?php echo $row['location'] ?></textarea>
+                                                <label>Extra Description:</label>
+                                                <textarea name="description" placeholder="If any"><?php echo $row['description'] ?></textarea>
+                                            </div>
+                                            <!-- Success message -->
+
+                                            <div class="form-message">
+                                                <?php
+                                                if (isset($_SESSION['message_success'])) {
+                                                    echo "<span>" . $_SESSION['message_success'] . "</span>";
+                                                    unset($_SESSION['message_success']);
+                                                }
+                                                ?>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-success">Update Order</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </form>
                         </tr>
                 <?php
                     }
@@ -185,7 +250,6 @@ if (!isset($_SESSION['admin_email'])) {
             myModal.show();
         <?php endif; ?>
     </script>
-
 </body>
 
 </html>

@@ -110,6 +110,7 @@ session_start();
                 </div>
             </div>
         </div>
+        
         <!-- BOOTSTRAP Modal -->
 
         <form action="product_control.php" method="post" id="bootstrap modal">

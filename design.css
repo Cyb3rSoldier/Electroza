@@ -1001,7 +1001,6 @@ body {
 
 .modal-header {
   background: brown;
-  color: white;
   padding: 20px;
   border-bottom: none;
   border-radius: 12px 12px 0 0;
@@ -1234,6 +1233,7 @@ body {
 
   .modal-title {
     font-size: 18px;
+    color: #fff;
   }
 }
 
@@ -1254,7 +1254,7 @@ body {
 
 .table h1 {
   text-align: center;
-  color: brown;
+  color:#283847;
   font-size: 2rem;
   margin-bottom: 30px;
   text-decoration: underline;

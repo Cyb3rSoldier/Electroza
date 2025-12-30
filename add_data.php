@@ -1,0 +1,32 @@
+<?php
+session_start();
+require_once 'config.php';
+
+if (!isset($_SESSION['admin_email'])) {
+    header("Location: admin_login.php");
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST['name'];
+    $product = $_POST['product'];
+    $quantity = $_POST['quantity'];
+    $contact = $_POST['contact'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
+
+    $stmt = $conn->prepare("INSERT INTO orders (name, product, quantity, contact, location, description)
+                            VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssisss", $name, $product, $quantity, $contact, $location, $description);
+
+    if ($stmt->execute()) {
+        $_SESSION['message_success'] = "Product added successfully!";
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    header("Location: admin_dash.php?showModal=true");
+    exit();
+}
